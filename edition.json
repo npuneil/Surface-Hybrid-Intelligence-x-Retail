@@ -1,0 +1,38 @@
+{
+  "schema": "studio-edition/1",
+  "id": "retail",
+  "displayName": "Surface Hybrid Intelligence x Retail",
+  "device": "Surface Laptop Ultra",
+  "mark": "Surface",
+  "markSubtitle": "Hybrid Intelligence x Retail",
+  "codeName": "HybridIntelligenceRetail",
+  "appUserModelId": "SurfaceHybridIntelligence.Retail",
+  "serviceAppId": "surface-hybrid-intelligence-retail",
+  "schemaPrefix": "hybrid-intelligence-retail",
+  "envPrefix": "HYBRID_RETAIL_",
+  "shortcutName": "Surface Hybrid Intelligence x Retail",
+  "repository": "npuneil/Surface-Hybrid-Intelligence-x-Retail",
+  "visibility": "public",
+  "logo": {
+    "style": "device",
+    "text": "SHOP",
+    "background": "#2E8B8B",
+    "backgroundEnd": "#073838",
+    "foreground": "#FFFFFF"
+  },
+  "accent": {
+    "base": "#0F6E6E",
+    "light1": "#2E8B8B",
+    "light2": "#5FAFAF",
+    "light3": "#A9D6D6",
+    "dark1": "#0C5C5C",
+    "dark2": "#0A4B4B",
+    "dark3": "#073838",
+    "tint": "#EEF7F7"
+  },
+  "webAccent": {
+    "base": "#0f6e6e",
+    "deep": "#073838",
+    "focus": "#5fafaf"
+  }
+}
