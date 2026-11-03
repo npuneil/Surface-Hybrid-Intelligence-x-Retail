@@ -903,7 +903,16 @@ and `release-notes.md` (version from the project file). Publish with
 
 ## Checks
 
+Recorded results are committed in [validation/test-results.json](validation/test-results.json),
+including GitHub API visibility verification and the tested commit. The November 2,
+2026 run passed 115 Python tests, 443 native self-tests, 333 live UI checks and 35
+browser checks. All 12 live demo pipelines completed; 11 passed every answer check.
+In the model face-off, Qwen2.5-Coder 14B missed one scheduling constraint while
+GPT-OSS 20B passed. This observed model-quality miss is retained, not counted as a
+correct answer. Hybrid cloud payloads were previewed only (NOT SENT).
+
 ```powershell
+.\tools\Test-Edition.ps1 -Browser -Live -NativePort 8814
 .\tests\Native-Smoke.ps1
 .\tests\Native-Smoke.ps1 -Live
 python -m unittest discover -s tests -v

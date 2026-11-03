@@ -1,0 +1,1792 @@
+{
+  "schema": "studio-validation-evidence/1",
+  "edition": "retail",
+  "recorded_at": "2026-11-03T16:06:29.7302390Z",
+  "validated_commit": "7a59cd2de6bdc3377789db9db3bfa69e84b669c4",
+  "scope": "Application and test code at validated_commit. Documentation links, this evidence snapshot, and the regenerated handout are published afterward.",
+  "publication": {
+    "verified_via": "Authenticated GitHub REST API: GET /repos/{owner}/{repo} and GET /repos/{owner}/{repo}/commits/main",
+    "verified_at": "2026-11-03T16:06:29.7323805Z",
+    "repository": "npuneil/Surface-Hybrid-Intelligence-x-Retail",
+    "url": "https://github.com/npuneil/Surface-Hybrid-Intelligence-x-Retail",
+    "visibility": "public",
+    "private": false,
+    "github_network_fork": false,
+    "default_branch": "main",
+    "remote_head": "7a59cd2de6bdc3377789db9db3bfa69e84b669c4"
+  },
+  "reproduce": {
+    "prerequisites": "Windows ARM64, .NET 10 SDK, Python requirements installed, Microsoft Edge, prepared Foundry Local CUDA models and demo media. Use the edition PYTHON and DOTNET environment variables if needed.",
+    "commands": [
+      ".\\tools\\Test-Edition.ps1 -Browser -Live -NativePort 8814"
+    ],
+    "isolation_scan": "The gate additionally used -ForbiddenToken with the disallowed audience/brand terms counted in each attempt; the terms are omitted from this snapshot.",
+    "raw_reports": [
+      ".runtime\\edition-conformance.json",
+      ".runtime\\native\\self-test.json",
+      ".runtime\\native\\native-smoke.json",
+      ".runtime\\browser-checks.json"
+    ]
+  },
+  "functional_validation_passed": true,
+  "all_required_gate_steps_passed": {
+    "manifest": true,
+    "sync": true,
+    "leak-scan": true,
+    "hygiene-scan": true,
+    "python-tests": true,
+    "native": true,
+    "browser": true,
+    "handout-scan": true
+  },
+  "all_live_demo_answer_checks_passed": false,
+  "observations": [
+    "Native functional checks verify execution and CUDA provenance, not universal model-answer correctness. Answer-quality grading is reported separately for each live demo.",
+    "The face-off completed both model pipelines. Qwen2.5-Coder 14B broke one scheduling constraint; GPT-OSS 20B passed. This is an observed model-quality miss, not a guaranteed or hard-coded outcome.",
+    "The hybrid router was tested as a local policy and redaction demonstration. Cloud payloads remain NOT SENT; no real cloud inference or system-of-record integration was tested.",
+    "These are synthetic-data prototype checks, not a penetration test, compliance certification, or a performance guarantee."
+  ],
+  "conformance_attempts": [
+    {
+      "checked_at": "2026-11-02T14:01:39.6187813-08:00",
+      "live": true,
+      "browser": true,
+      "passed": true,
+      "forbidden_term_count": 6,
+      "steps": [
+        {
+          "step": "manifest",
+          "passed": true,
+          "detail": "retail: Surface Hybrid Intelligence x Retail (public -> npuneil/Surface-Hybrid-Intelligence-x-Retail)",
+          "seconds": 0.0
+        },
+        {
+          "step": "sync",
+          "passed": true,
+          "detail": "Brand.cs, logo, icon and accents match edition.json",
+          "seconds": 0.1
+        },
+        {
+          "step": "leak-scan",
+          "passed": true,
+          "detail": "6 disallowed audience/brand terms: no matches. Terms omitted to preserve edition isolation.",
+          "seconds": 0.6
+        },
+        {
+          "step": "hygiene-scan",
+          "passed": true,
+          "detail": "86 files: no user-profile paths, tokens or keys",
+          "seconds": 0.2
+        },
+        {
+          "step": "python-tests",
+          "passed": true,
+          "detail": "Ran 115 tests in 8.271s OK",
+          "seconds": 8.6
+        },
+        {
+          "step": "native",
+          "passed": true,
+          "detail": "self-test 443/443; UI smoke 333/333 (live=True)",
+          "seconds": 377.8
+        },
+        {
+          "step": "browser",
+          "passed": true,
+          "detail": "35 browser checks; Executive-Handout.pdf refreshed",
+          "seconds": 8.7
+        },
+        {
+          "step": "handout-scan",
+          "passed": true,
+          "detail": "Executive-Handout.pdf clean (hygiene + forbidden tokens)",
+          "seconds": 0.1
+        }
+      ]
+    }
+  ],
+  "native_self_test": {
+    "total": 443,
+    "passed": 443,
+    "failed": 0,
+    "failures": []
+  },
+  "native_live_smoke": {
+    "completed_at": "2026-11-02T14:01:30.2837224-08:00",
+    "passed": true,
+    "live_inference_checked": true,
+    "checks_passed": 333,
+    "checks_total": 333,
+    "checks": [
+      {
+        "name": "service-connected",
+        "passed": true
+      },
+      {
+        "name": "brand-assets-present",
+        "passed": true
+      },
+      {
+        "name": "titlebar-logo",
+        "passed": true
+      },
+      {
+        "name": "brand-mark",
+        "passed": true
+      },
+      {
+        "name": "section-overview",
+        "passed": true
+      },
+      {
+        "name": "section-live",
+        "passed": true
+      },
+      {
+        "name": "section-demos",
+        "passed": true
+      },
+      {
+        "name": "section-hybrid",
+        "passed": true
+      },
+      {
+        "name": "section-industries",
+        "passed": true
+      },
+      {
+        "name": "section-showoff",
+        "passed": true
+      },
+      {
+        "name": "section-build",
+        "passed": true
+      },
+      {
+        "name": "section-sizing",
+        "passed": true
+      },
+      {
+        "name": "section-platforms",
+        "passed": true
+      },
+      {
+        "name": "section-deviceclasses",
+        "passed": true
+      },
+      {
+        "name": "section-business",
+        "passed": true
+      },
+      {
+        "name": "section-playbook",
+        "passed": true
+      },
+      {
+        "name": "automation-id-PlaybookRunOfShow",
+        "passed": true
+      },
+      {
+        "name": "section-learn",
+        "passed": true
+      },
+      {
+        "name": "overview-hero-stats",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveModelPicker",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveLoadModel",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveScenarioPicker",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LivePrompt",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveSourceExpander",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveRunButton",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveRehearsalButton",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveStopButton",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveOutput",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveModeBanner",
+        "passed": true
+      },
+      {
+        "name": "automation-id-LiveExportButton",
+        "passed": true
+      },
+      {
+        "name": "scenarios-loaded",
+        "passed": true
+      },
+      {
+        "name": "models-foundry-and-llama",
+        "passed": true
+      },
+      {
+        "name": "model-picker-qwen2.5-coder-14b",
+        "passed": true
+      },
+      {
+        "name": "model-picker-gpt-oss-20b",
+        "passed": true
+      },
+      {
+        "name": "model-picker-qwen3-coder-30b",
+        "passed": true
+      },
+      {
+        "name": "model-picker-llama3.3-70b",
+        "passed": true
+      },
+      {
+        "name": "model-picker-gpt-oss-120b",
+        "passed": true
+      },
+      {
+        "name": "model-picker-mai-code-1.1-flash",
+        "passed": true
+      },
+      {
+        "name": "model-mai-honest",
+        "passed": true
+      },
+      {
+        "name": "industry-scenarios-loaded",
+        "passed": true
+      },
+      {
+        "name": "industry-card-fleet-health",
+        "passed": true
+      },
+      {
+        "name": "industry-card-major-incident",
+        "passed": true
+      },
+      {
+        "name": "industry-card-customer-care",
+        "passed": true
+      },
+      {
+        "name": "industry-card-replenishment",
+        "passed": true
+      },
+      {
+        "name": "industry-card-store-visit",
+        "passed": true
+      },
+      {
+        "name": "industry-card-line-review",
+        "passed": true
+      },
+      {
+        "name": "industry-brief-export",
+        "passed": true
+      },
+      {
+        "name": "hybrid-catalog-loaded",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridInput",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridOffline",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridBeyond",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridRoute",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridRun",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridStop",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridLane",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridHeadline",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridSteps",
+        "passed": true
+      },
+      {
+        "name": "automation-id-HybridPatterns",
+        "passed": true
+      },
+      {
+        "name": "hybrid-preset-complaint",
+        "passed": true
+      },
+      {
+        "name": "hybrid-preset-rates",
+        "passed": true
+      },
+      {
+        "name": "hybrid-rates-preview-masked",
+        "passed": true
+      },
+      {
+        "name": "hybrid-preset-news",
+        "passed": true
+      },
+      {
+        "name": "hybrid-preset-secret",
+        "passed": true
+      },
+      {
+        "name": "hybrid-preset-field",
+        "passed": true
+      },
+      {
+        "name": "hybrid-preset-org",
+        "passed": true
+      },
+      {
+        "name": "hybrid-preset-complex-case",
+        "passed": true
+      },
+      {
+        "name": "hybrid-preset-button-click",
+        "passed": true
+      },
+      {
+        "name": "hybrid-pattern-local-first",
+        "passed": true
+      },
+      {
+        "name": "hybrid-pattern-redact-cloud",
+        "passed": true
+      },
+      {
+        "name": "hybrid-pattern-private-knowledge",
+        "passed": true
+      },
+      {
+        "name": "hybrid-pattern-field",
+        "passed": true
+      },
+      {
+        "name": "hybrid-pattern-volume",
+        "passed": true
+      },
+      {
+        "name": "hybrid-pattern-right-size",
+        "passed": true
+      },
+      {
+        "name": "hybrid-pattern-same-api",
+        "passed": true
+      },
+      {
+        "name": "hybrid-pattern-proof-opens-demo",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildEndpointState",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildBaseUrl",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildModel",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildStartEndpoint",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildStopEndpoint",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildTestCall",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildCopyUrl",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildSnippetPicker",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildSnippetCode",
+        "passed": true
+      },
+      {
+        "name": "automation-id-BuildKits",
+        "passed": true
+      },
+      {
+        "name": "build-endpoint-off-by-default",
+        "passed": true
+      },
+      {
+        "name": "build-loopback-base-url",
+        "passed": true
+      },
+      {
+        "name": "build-kit-chat",
+        "passed": true
+      },
+      {
+        "name": "build-kit-private-docs",
+        "passed": true
+      },
+      {
+        "name": "build-kit-redact-then-cloud",
+        "passed": true
+      },
+      {
+        "name": "build-kit-tool-agent",
+        "passed": true
+      },
+      {
+        "name": "build-kit-csharp-chat",
+        "passed": true
+      },
+      {
+        "name": "build-snippets",
+        "passed": true
+      },
+      {
+        "name": "build-starter-written",
+        "passed": true
+      },
+      {
+        "name": "tool-card-forge",
+        "passed": true
+      },
+      {
+        "name": "tool-card-tokenomics",
+        "passed": true
+      },
+      {
+        "name": "tool-card-headroom",
+        "passed": true
+      },
+      {
+        "name": "tool-card-bench",
+        "passed": true
+      },
+      {
+        "name": "tool-card-hydrafusion",
+        "passed": true
+      },
+      {
+        "name": "showoff-step-1",
+        "passed": true
+      },
+      {
+        "name": "showoff-step-2",
+        "passed": true
+      },
+      {
+        "name": "showoff-step-3",
+        "passed": true
+      },
+      {
+        "name": "showoff-step-4",
+        "passed": true
+      },
+      {
+        "name": "showoff-step-5",
+        "passed": true
+      },
+      {
+        "name": "speed-gated-on-model",
+        "passed": true
+      },
+      {
+        "name": "showoff-step-1-routes-rates",
+        "passed": true
+      },
+      {
+        "name": "overview-way-hybrid",
+        "passed": true
+      },
+      {
+        "name": "overview-way-showoff",
+        "passed": true
+      },
+      {
+        "name": "overview-way-build",
+        "passed": true
+      },
+      {
+        "name": "overview-way-deviceclasses",
+        "passed": true
+      },
+      {
+        "name": "lab-interlock-locks-others",
+        "passed": true
+      },
+      {
+        "name": "lab-interlock-demo-blocker",
+        "passed": true
+      },
+      {
+        "name": "lab-locked-by-demo",
+        "passed": true
+      },
+      {
+        "name": "sizing-default-tab-sales",
+        "passed": true
+      },
+      {
+        "name": "sales-empty-state",
+        "passed": true
+      },
+      {
+        "name": "sales-transcription-S",
+        "passed": true
+      },
+      {
+        "name": "sales-translation-M",
+        "passed": true
+      },
+      {
+        "name": "sales-coding-L",
+        "passed": true
+      },
+      {
+        "name": "sales-prototyping-XL",
+        "passed": true
+      },
+      {
+        "name": "sales-multi-select-largest-wins",
+        "passed": true
+      },
+      {
+        "name": "sales-device-compare",
+        "passed": true
+      },
+      {
+        "name": "sales-talk-track-shown",
+        "passed": true
+      },
+      {
+        "name": "sales-live-buttons",
+        "passed": true
+      },
+      {
+        "name": "sales-obvious-launch-button-transcription",
+        "passed": true
+      },
+      {
+        "name": "sales-obvious-launch-button-field",
+        "passed": true
+      },
+      {
+        "name": "sales-obvious-launch-button-translation",
+        "passed": true
+      },
+      {
+        "name": "sales-obvious-launch-button-writing",
+        "passed": true
+      },
+      {
+        "name": "sales-obvious-launch-button-documents",
+        "passed": true
+      },
+      {
+        "name": "sales-obvious-launch-button-vision",
+        "passed": true
+      },
+      {
+        "name": "sales-obvious-launch-button-coding",
+        "passed": true
+      },
+      {
+        "name": "sales-obvious-launch-button-reasoning",
+        "passed": true
+      },
+      {
+        "name": "sales-hands-off-to-technical",
+        "passed": true
+      },
+      {
+        "name": "ultra-coding-48",
+        "passed": true
+      },
+      {
+        "name": "ultra-cards-show-split",
+        "passed": true
+      },
+      {
+        "name": "ultra-this-pc-marker",
+        "passed": true
+      },
+      {
+        "name": "ultra-measured-basis",
+        "passed": true
+      },
+      {
+        "name": "ultra-custom-basis",
+        "passed": true
+      },
+      {
+        "name": "ultra-frontier-128",
+        "passed": true
+      },
+      {
+        "name": "ultra-together-64",
+        "passed": true
+      },
+      {
+        "name": "ultra-long-together-128",
+        "passed": true
+      },
+      {
+        "name": "ultra-none-holds-everything-together",
+        "passed": true
+      },
+      {
+        "name": "ultra-empty-state",
+        "passed": true
+      },
+      {
+        "name": "ultra-default-coding-48",
+        "passed": true
+      },
+      {
+        "name": "sizing-14b-4bit-weights",
+        "passed": true
+      },
+      {
+        "name": "sizing-14b-fits-gpu-budget",
+        "passed": true
+      },
+      {
+        "name": "sizing-gpu-budget-not-summed",
+        "passed": true
+      },
+      {
+        "name": "sizing-windows-view-not-summed",
+        "passed": true
+      },
+      {
+        "name": "sizing-xl-16bit-exceeds-32gib",
+        "passed": true
+      },
+      {
+        "name": "sizing-empty-parameters-invalid",
+        "passed": true
+      },
+      {
+        "name": "sizing-zero-budget-invalid",
+        "passed": true
+      },
+      {
+        "name": "sizing-reserve-consumes-budget-invalid",
+        "passed": true
+      },
+      {
+        "name": "sizing-zero-headroom-valid",
+        "passed": true
+      },
+      {
+        "name": "sizing-observed-metadata-shown",
+        "passed": true
+      },
+      {
+        "name": "platform-card-rtx",
+        "passed": true
+      },
+      {
+        "name": "platform-source-rtx-0",
+        "passed": true
+      },
+      {
+        "name": "platform-card-snapdragon",
+        "passed": true
+      },
+      {
+        "name": "platform-source-snapdragon-0",
+        "passed": true
+      },
+      {
+        "name": "platform-source-snapdragon-1",
+        "passed": true
+      },
+      {
+        "name": "platform-source-snapdragon-2",
+        "passed": true
+      },
+      {
+        "name": "platform-card-intel",
+        "passed": true
+      },
+      {
+        "name": "platform-source-intel-0",
+        "passed": true
+      },
+      {
+        "name": "platform-source-intel-1",
+        "passed": true
+      },
+      {
+        "name": "platform-source-intel-2",
+        "passed": true
+      },
+      {
+        "name": "platform-try-field-enabled",
+        "passed": true
+      },
+      {
+        "name": "platform-try-meeting-enabled",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-disclaimer",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-footnote",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassCopilotPlus",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassTryThis",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassBuilder",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassQuotes",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassBudget",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassAlwaysOn",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassAlwaysOnExample",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassMatrix",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassOpenSizing",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DeviceClassPatterns",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-budget-live",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-ten-rows",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-transcription",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-field",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-translation",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-writing",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-documents",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-vision",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-coding",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-reasoning",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-prototyping",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-row-frontier",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-run-buttons-live-only",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-pattern-meeting",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-pattern-voice-memo",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-pattern-vision",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-pattern-ask-docs",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-pattern-redact",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-pattern-code",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-six-pattern-buttons",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-links-approved",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-pattern-opens-demo",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-run-opens-demo-only",
+        "passed": true
+      },
+      {
+        "name": "business-calculated-by-service",
+        "passed": true
+      },
+      {
+        "name": "business-disclaimer-shown",
+        "passed": true
+      },
+      {
+        "name": "business-export",
+        "passed": true
+      },
+      {
+        "name": "business-invalid-rejected",
+        "passed": true
+      },
+      {
+        "name": "learn-tab-visible-by-default",
+        "passed": true
+      },
+      {
+        "name": "learn-lessons-listed",
+        "passed": true
+      },
+      {
+        "name": "learn-progress-starts-empty",
+        "passed": true
+      },
+      {
+        "name": "learn-lesson-rendered",
+        "passed": true
+      },
+      {
+        "name": "learn-quiz-needs-selection",
+        "passed": true
+      },
+      {
+        "name": "learn-wrong-answer-not-completed",
+        "passed": true
+      },
+      {
+        "name": "learn-right-answer-completes",
+        "passed": true
+      },
+      {
+        "name": "learn-progress-persisted",
+        "passed": true
+      },
+      {
+        "name": "learn-sizing-link-only-where-relevant",
+        "passed": true
+      },
+      {
+        "name": "learn-sizing-link-matches-engine",
+        "passed": true
+      },
+      {
+        "name": "learn-tutor-prompt-parity",
+        "passed": true
+      },
+      {
+        "name": "learn-tutor-enabled",
+        "passed": true
+      },
+      {
+        "name": "learn-tutor-hand-off",
+        "passed": true
+      },
+      {
+        "name": "learn-tutor-hand-off-other-lesson",
+        "passed": true
+      },
+      {
+        "name": "learn-hide-tab",
+        "passed": true
+      },
+      {
+        "name": "learn-show-tab-from-playbook",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-brief",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-code",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-field",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-meeting",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-customer-care",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-fleet-health",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-line-review",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-major-incident",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-replenishment",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-store-visit",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-tutor",
+        "passed": true
+      },
+      {
+        "name": "rehearsal-export-no-metrics",
+        "passed": true
+      },
+      {
+        "name": "demos-catalog-matches-app",
+        "passed": true
+      },
+      {
+        "name": "deviceclasses-pattern-workloads-match-catalog",
+        "passed": true
+      },
+      {
+        "name": "demos-media-ready",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoReadinessCard",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoReadyChat",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoReadyModels",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoReadyRuntime",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoReadyMedia",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoReadinessDetail",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoRunAll",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoGallery",
+        "passed": true
+      },
+      {
+        "name": "demo-card-meeting",
+        "passed": true
+      },
+      {
+        "name": "demo-card-voice-memo",
+        "passed": true
+      },
+      {
+        "name": "demo-card-vision",
+        "passed": true
+      },
+      {
+        "name": "demo-card-ask-docs",
+        "passed": true
+      },
+      {
+        "name": "demo-card-translate",
+        "passed": true
+      },
+      {
+        "name": "demo-card-brief",
+        "passed": true
+      },
+      {
+        "name": "demo-card-redact",
+        "passed": true
+      },
+      {
+        "name": "demo-card-triage",
+        "passed": true
+      },
+      {
+        "name": "demo-card-code",
+        "passed": true
+      },
+      {
+        "name": "demo-card-reasoning",
+        "passed": true
+      },
+      {
+        "name": "demo-card-faceoff",
+        "passed": true
+      },
+      {
+        "name": "demo-card-team",
+        "passed": true
+      },
+      {
+        "name": "demo-launch-opens-runner",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoBack",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoRunnerTitle",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoInputHost",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoPrompt",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoRunLive",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoRunRehearsal",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoStop",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoModeBanner",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoSteps",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoCopy",
+        "passed": true
+      },
+      {
+        "name": "automation-id-DemoExport",
+        "passed": true
+      },
+      {
+        "name": "demo-audio-preview",
+        "passed": true
+      },
+      {
+        "name": "demo-back-to-gallery",
+        "passed": true
+      },
+      {
+        "name": "demo-meeting-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-voice-memo-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-vision-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-ask-docs-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-translate-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-brief-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-redact-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-triage-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-code-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-reasoning-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-faceoff-live-only",
+        "passed": true
+      },
+      {
+        "name": "demo-team-live-only",
+        "passed": true
+      },
+      {
+        "name": "demo-translate-option-live-only",
+        "passed": true
+      },
+      {
+        "name": "demo-empty-instruction-rejected",
+        "passed": true
+      },
+      {
+        "name": "demo-restore-instruction",
+        "passed": true
+      },
+      {
+        "name": "demo-vision-receipt-preview",
+        "passed": true
+      },
+      {
+        "name": "demo-vision-receipt-rehearsal",
+        "passed": true
+      },
+      {
+        "name": "demo-rehearsal-export",
+        "passed": true
+      },
+      {
+        "name": "demo-interlock-live-workspace-busy",
+        "passed": true
+      },
+      {
+        "name": "demo-interlock-demo-busy",
+        "passed": true
+      },
+      {
+        "name": "sales-hands-off-to-demo",
+        "passed": true
+      },
+      {
+        "name": "sales-badge-launch-transcription",
+        "passed": true
+      },
+      {
+        "name": "sales-badge-launch-field",
+        "passed": true
+      },
+      {
+        "name": "sales-badge-launch-translation",
+        "passed": true
+      },
+      {
+        "name": "sales-badge-launch-writing",
+        "passed": true
+      },
+      {
+        "name": "sales-badge-launch-documents",
+        "passed": true
+      },
+      {
+        "name": "sales-badge-launch-vision",
+        "passed": true
+      },
+      {
+        "name": "sales-badge-launch-coding",
+        "passed": true
+      },
+      {
+        "name": "sales-badge-launch-reasoning",
+        "passed": true
+      },
+      {
+        "name": "sales-guidance-not-launchable",
+        "passed": true
+      },
+      {
+        "name": "live-engine-ready",
+        "passed": true
+      },
+      {
+        "name": "live-brief",
+        "passed": true
+      },
+      {
+        "name": "live-export-provenance",
+        "passed": true
+      },
+      {
+        "name": "live-code",
+        "passed": true
+      },
+      {
+        "name": "live-field",
+        "passed": true
+      },
+      {
+        "name": "live-meeting",
+        "passed": true
+      },
+      {
+        "name": "live-customer-care",
+        "passed": true
+      },
+      {
+        "name": "live-fleet-health",
+        "passed": true
+      },
+      {
+        "name": "live-line-review",
+        "passed": true
+      },
+      {
+        "name": "live-major-incident",
+        "passed": true
+      },
+      {
+        "name": "live-replenishment",
+        "passed": true
+      },
+      {
+        "name": "live-store-visit",
+        "passed": true
+      },
+      {
+        "name": "live-tutor",
+        "passed": true
+      },
+      {
+        "name": "demos-live-ready",
+        "passed": true
+      },
+      {
+        "name": "demo-live-meeting",
+        "passed": true
+      },
+      {
+        "name": "demo-live-voice-memo",
+        "passed": true
+      },
+      {
+        "name": "demo-live-vision",
+        "passed": true
+      },
+      {
+        "name": "demo-live-ask-docs",
+        "passed": true
+      },
+      {
+        "name": "demo-live-translate",
+        "passed": true
+      },
+      {
+        "name": "demo-live-brief",
+        "passed": true
+      },
+      {
+        "name": "demo-live-redact",
+        "passed": true
+      },
+      {
+        "name": "demo-live-triage",
+        "passed": true
+      },
+      {
+        "name": "demo-live-code",
+        "passed": true
+      },
+      {
+        "name": "demo-live-reasoning",
+        "passed": true
+      },
+      {
+        "name": "demo-live-faceoff",
+        "passed": true
+      },
+      {
+        "name": "demo-live-team",
+        "passed": true
+      },
+      {
+        "name": "demos-preflight-summary",
+        "passed": true
+      },
+      {
+        "name": "demo-live-export",
+        "passed": true
+      },
+      {
+        "name": "speed-test-live",
+        "passed": true
+      },
+      {
+        "name": "speed-export",
+        "passed": true
+      },
+      {
+        "name": "build-endpoint-start",
+        "passed": true
+      },
+      {
+        "name": "build-endpoint-test-call",
+        "passed": true
+      },
+      {
+        "name": "build-endpoint-stop",
+        "passed": true
+      },
+      {
+        "name": "hybrid-live-rates",
+        "passed": true
+      }
+    ],
+    "failures": [],
+    "live_scenarios": [
+      {
+        "scenario": "brief",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 422,
+        "total_ms": 11227,
+        "output_tokens": 323,
+        "tokens_per_second": 28.8,
+        "token_events": 323,
+        "visible_characters": 1615,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "code",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 390,
+        "total_ms": 11899,
+        "output_tokens": 346,
+        "tokens_per_second": 29.1,
+        "token_events": 346,
+        "visible_characters": 1165,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "field",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 405,
+        "total_ms": 3727,
+        "output_tokens": 101,
+        "tokens_per_second": 27.1,
+        "token_events": 101,
+        "visible_characters": 376,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "meeting",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 382,
+        "total_ms": 3909,
+        "output_tokens": 106,
+        "tokens_per_second": 27.1,
+        "token_events": 106,
+        "visible_characters": 463,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "customer-care",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 395,
+        "total_ms": 5009,
+        "output_tokens": 139,
+        "tokens_per_second": 27.8,
+        "token_events": 139,
+        "visible_characters": 548,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "fleet-health",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 404,
+        "total_ms": 5341,
+        "output_tokens": 146,
+        "tokens_per_second": 27.3,
+        "token_events": 146,
+        "visible_characters": 544,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "line-review",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 388,
+        "total_ms": 4704,
+        "output_tokens": 130,
+        "tokens_per_second": 27.6,
+        "token_events": 130,
+        "visible_characters": 479,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "major-incident",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 390,
+        "total_ms": 5046,
+        "output_tokens": 141,
+        "tokens_per_second": 27.9,
+        "token_events": 141,
+        "visible_characters": 537,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "replenishment",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 396,
+        "total_ms": 5862,
+        "output_tokens": 164,
+        "tokens_per_second": 28,
+        "token_events": 164,
+        "visible_characters": 618,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "store-visit",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 385,
+        "total_ms": 4361,
+        "output_tokens": 121,
+        "tokens_per_second": 27.7,
+        "token_events": 121,
+        "visible_characters": 467,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      },
+      {
+        "scenario": "tutor",
+        "model": "qwen2.5-coder-14b-instruct-cuda-gpu:4",
+        "provider": "CUDAExecutionProvider",
+        "ttft_ms": 384,
+        "total_ms": 10396,
+        "output_tokens": 302,
+        "tokens_per_second": 29,
+        "token_events": 302,
+        "visible_characters": 1330,
+        "private_reasoning_characters_withheld": 0,
+        "error": null
+      }
+    ],
+    "live_demos": [
+      {
+        "demo": "meeting",
+        "outcome": "2 of 2 checks passed",
+        "error": null,
+        "total_ms": 10791,
+        "checks_passed": 2,
+        "checks_total": 2,
+        "failed_checks": [],
+        "models": [
+          "Whisper medium",
+          "Qwen2.5-Coder 14B"
+        ]
+      },
+      {
+        "demo": "voice-memo",
+        "outcome": "3 of 3 checks passed",
+        "error": null,
+        "total_ms": 7778,
+        "checks_passed": 3,
+        "checks_total": 3,
+        "failed_checks": [],
+        "models": [
+          "Whisper medium",
+          "Qwen2.5-Coder 14B"
+        ]
+      },
+      {
+        "demo": "vision",
+        "outcome": "2 of 2 checks passed",
+        "error": null,
+        "total_ms": 10351,
+        "checks_passed": 2,
+        "checks_total": 2,
+        "failed_checks": [],
+        "models": "Qwen3-VL 4B"
+      },
+      {
+        "demo": "ask-docs",
+        "outcome": "2 of 2 checks passed",
+        "error": null,
+        "total_ms": 4486,
+        "checks_passed": 2,
+        "checks_total": 2,
+        "failed_checks": [],
+        "models": [
+          "Qwen3-Embedding 0.6B",
+          "Qwen2.5-Coder 14B"
+        ]
+      },
+      {
+        "demo": "translate",
+        "outcome": "1 of 1 checks passed",
+        "error": null,
+        "total_ms": 5167,
+        "checks_passed": 1,
+        "checks_total": 1,
+        "failed_checks": [],
+        "models": "Qwen2.5-Coder 14B"
+      },
+      {
+        "demo": "brief",
+        "outcome": "2 of 2 checks passed",
+        "error": null,
+        "total_ms": 11258,
+        "checks_passed": 2,
+        "checks_total": 2,
+        "failed_checks": [],
+        "models": "Qwen2.5-Coder 14B"
+      },
+      {
+        "demo": "redact",
+        "outcome": "2 of 2 checks passed",
+        "error": null,
+        "total_ms": 4484,
+        "checks_passed": 2,
+        "checks_total": 2,
+        "failed_checks": [],
+        "models": "Qwen2.5-Coder 14B"
+      },
+      {
+        "demo": "triage",
+        "outcome": "2 of 2 checks passed",
+        "error": null,
+        "total_ms": 8522,
+        "checks_passed": 2,
+        "checks_total": 2,
+        "failed_checks": [],
+        "models": "Qwen2.5-Coder 14B"
+      },
+      {
+        "demo": "code",
+        "outcome": "1 of 1 checks passed",
+        "error": null,
+        "total_ms": 12028,
+        "checks_passed": 1,
+        "checks_total": 1,
+        "failed_checks": [],
+        "models": "Qwen2.5-Coder 14B"
+      },
+      {
+        "demo": "reasoning",
+        "outcome": "1 of 1 checks passed",
+        "error": null,
+        "total_ms": 40328,
+        "checks_passed": 1,
+        "checks_total": 1,
+        "failed_checks": [],
+        "models": "GPT-OSS 20B"
+      },
+      {
+        "demo": "faceoff",
+        "outcome": "1 of 2 checks passed",
+        "error": null,
+        "total_ms": 29716,
+        "checks_passed": 1,
+        "checks_total": 2,
+        "failed_checks": [
+          "Qwen2.5-Coder 14B: schedule satisfies all six constraints: 1 broken (Birch, Cedar, Harbor, Delta, Atlas | Broken: (3) Atlas not in week 1 or 5)"
+        ],
+        "models": [
+          "Qwen2.5-Coder 14B",
+          "GPT-OSS 20B"
+        ]
+      },
+      {
+        "demo": "team",
+        "outcome": "6 of 6 checks passed",
+        "error": null,
+        "total_ms": 8544,
+        "checks_passed": 6,
+        "checks_total": 6,
+        "failed_checks": [],
+        "models": [
+          "Qwen2.5-Coder 14B",
+          "GPT-OSS 20B",
+          "Whisper medium",
+          "Qwen3-VL 4B",
+          "Qwen3-Embedding 0.6B",
+          "Foundry Local and Windows counters"
+        ]
+      }
+    ],
+    "hybrid_redaction": {
+      "check": "✓ Re-scan passed: no identifier the patterns detected survived. Names and context can still slip through, so a person reviews before anything is shared.",
+      "payload_title": "WOULD SEND TO YOUR CLOUD SERVICE - NOT SENT",
+      "metrics": "Generated on this PC by Qwen2.5-Coder 14B · first text 0.38 s · total 2.5 s · 25.8 tokens/s. One run, not a benchmark."
+    }
+  },
+  "browser": {
+    "include_live": false,
+    "passed": 35,
+    "checks": [
+      "Desktop has no horizontal overflow",
+      "Physical DIMM capacity is correctly shown as 128 GB",
+      "Windows-visible 64 GB is labeled separately from installed memory",
+      "Showcase hardware cards and footer focus on GPU, not NPU",
+      "Seller playbook opens",
+      "Playbook contains timed executive flow",
+      "Device evidence is GPU-focused",
+      "Device classes dialog shows sourced device classes and the disclaimer",
+      "Original synthetic source is inspectable",
+      "Authored rehearsal locks its prompt",
+      "brief: rehearsal has no error",
+      "brief: rehearsal explicitly labeled",
+      "brief: no invented latency",
+      "brief: no fabricated GPU inference",
+      "brief: authored output visible",
+      "code: rehearsal has no error",
+      "code: rehearsal explicitly labeled",
+      "code: no invented latency",
+      "code: no fabricated GPU inference",
+      "code: authored output visible",
+      "Evidence export preserves authored execution mode",
+      "Business case story switches cleanly",
+      "Default capacity arithmetic is correct",
+      "Assumed hardware investment is correct",
+      "Zero improvement produces zero capacity value",
+      "Invalid case cannot export stale results",
+      "Business case export contains inputs and derived values",
+      "Business case export includes boundary",
+      "Request failures surface their actual error",
+      "Failure does not substitute authored output or permit evidence export",
+      "Executive print handout renders as a single-page PDF",
+      "value mobile layout has no horizontal overflow",
+      "brief mobile layout has no horizontal overflow",
+      "code mobile layout has no horizontal overflow",
+      "No uncaught JavaScript errors"
+    ],
+    "browser": "Microsoft Edge"
+  },
+  "handout_sha256": "92cf73da9c1af3ae309646ae097f19d453c92d1c45e44ac28bfac020201d9b91"
+}
